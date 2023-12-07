@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  
+</head>
+
+<body>
+  <div id="sidebar">
+    <a href="https://github.com/EmreSimseker"><img src="images/githublogo.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/in/emre-simseker-b5691924a/"><img src="images/linkedinlogo.png" alt="linkedin"></a>
+    <a href="mailto:your-Emre.Simseker@student.gildeopleidingen.nl"><img src="images/emailll.png" alt="Outlook"></a>
+  </div>
+
+  <nav>
+    <img id="profile-picture" src="images/fotoCV.jpg" alt="Profile Picture">
+    <a id="emre-simseker">Emre Simseker</a>
+    <a href="#">Home</a>
+    <a href="#about">Over Mij</a>
+    <a href="#projects">Projecten</a>
+  </nav>
+
+  <div class="welcome-section">
+    <h1>Ontdek mijn werk - Welkom bij mijn portfolio.</h1>
+    <p class="project-description">Dit is mijn portfolio als student software developer. Hier vind je mijn projecten en werk.</p>
+    <a href="#projects" class="project-button">Projecten ➜ </a>
+  </div>
+
+  <div id="about" class="projects-section">
+    <h2>Over Mij</h2>
+
+    <div class="about-content">
+        <img src="images/coding.png" alt="Another Image" class="about-image">
+        <div class="about-text">
+            <p class="project-description">
+              Ik ben Emre, een student Software aan het Gilde ICT College in Venray. Mijn passie ligt in het ontwikkelen van software, en ik ambieer me te specialiseren in Front-end Development. Hier kun je een deel van mijn werk vinden; dit is natuurlijk niet alles. Je kunt ook mijn code bekijken op mijn GitHub!
+            </p>
+        </div>
+    </div>
+  </div>
+
+  <div id="projects" class="projects-section">
+    <div class="project">
+      <a href="project1.html">
+        <img src="images/projectmilieu.png" alt="Project 1">
+        <div class="overlay">HTML & CSS</div>
+      </a>
+    </div>
+
+    <div class="project">
+      <a href="project2.html">
+        <img src="images/rekenmachine.png" alt="Project 2">
+        <div class="overlay">JAVASCRIPT</div>
+      </a>
+    </div>
+
+    <div class="project">
+      <a href="project3.html">
+        <img src="images/loginPHP.png" alt="Project 3">
+        <div class="overlay">PHP</div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+              top: offset,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

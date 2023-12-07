@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6em;
+    background-color: #dcdcdc;
+    background-image: linear-gradient(30deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(150deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(30deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(150deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(60deg, #e5e5e577 25%, transparent 25.5%, transparent 75%, #e5e5e577 75%, #e5e5e577),
+        linear-gradient(60deg, #e5e5e577 25%, transparent 25.5%, transparent 75%, #e5e5e577 75%, #e5e5e577);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+#profile-picture {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+}
+
+nav {
+    background-color: #eeeeee;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+nav #emre-simseker {
+    margin-right: auto;
+    pointer-events: none;
+    font-size: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #000000;
+    font-size: 1.3em;
+    transition: color 0.4s, font-size 0.4s;
+}
+
+nav a:hover {
+    color: #2c4d61;
+    font-size: 1.9em;
+}
+
+.white-block {
+    background-color: #fff;
+    margin-top: 16vh;
+    margin-bottom: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90%;
+    text-align: center;
+    padding-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.white-block img {
+    width: 30vw;
+    height: 65vw; 
+    margin-top: -18vw; 
+    margin-bottom: 2vw;
+}
+
+.text-container {
+    color: #555555;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 2em 0em 2em;
+}
+
+.text-container p {
+    margin-top: 0;
+}
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img id="profile-picture" src="images/fotoCV.jpg" alt="Profile Picture">
+    <a id="emre-simseker">Emre Simseker</a>
+    <a href="index.html">Home</a>
+  </nav>
+  <div class="white-block">
+    <h1>Project inlog PHP</h1>
+    <div class="text-container">
+      <p>Dit is een project waarbij ik een PHP-loginvenster heb gemaakt. De database bevat een e-mail en wachtwoord. Wanneer er op 'Inloggen' wordt geklikt, wordt gecontroleerd of de ingevoerde gegevens overeenkomen met de gegevens in de database. Als de gegevens overeenkomen, wordt een groen scherm weergegeven met de gegevens uit de database. </p>
+    </div>
+    <img src="images/inlogProjectPhp.png" alt="Image 1">
+
+  </div>
+</body>
+
+</html>

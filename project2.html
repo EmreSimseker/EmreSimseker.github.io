@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+       body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6em;
+    background-color: #dcdcdc;
+    background-image: linear-gradient(30deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(150deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(30deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(150deg, #e5e5e5 12%, transparent 12.5%, transparent 87%, #e5e5e5 87.5%, #e5e5e5),
+        linear-gradient(60deg, #e5e5e577 25%, transparent 25.5%, transparent 75%, #e5e5e577 75%, #e5e5e577),
+        linear-gradient(60deg, #e5e5e577 25%, transparent 25.5%, transparent 75%, #e5e5e577 75%, #e5e5e577);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+#profile-picture {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+}
+
+nav {
+    background-color: #eeeeee;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+nav #emre-simseker {
+    margin-right: auto;
+    pointer-events: none;
+    font-size: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: #000000;
+    font-size: 1.3em;
+    transition: color 0.4s, font-size 0.4s;
+}
+
+nav a:hover {
+    color: #2c4d61;
+    font-size: 1.9em;
+}
+
+.white-block {
+    height: 130vh;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12vh;
+}
+
+.text-container {
+    color: #555555;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 7em 0em 7em;
+}
+
+.text-container p {
+    margin-top: 0;
+}
+
+.grid-container {
+    position: absolute;
+    top: 62%;
+    left: 36%;
+    width: 30%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #4a4b4b;
+    padding: 0.6vw;
+    border-radius: 0.6vw;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 0.2vw solid rgba(0, 0, 0, 0.8);
+    padding: 1.5vw;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.calculator-scherm {
+    grid-column: span 3;
+    background-color: #fff;
+    border: 0.2vw solid rgba(0, 0, 0, 0.8);
+    padding: 1vw;
+    font-size: 40px;
+    text-align: right;
+}
+
+.mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img id="profile-picture" src="images/fotoCV.jpg" alt="Profile Picture">
+        <a id="emre-simseker">Emre Simseker</a>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class="white-block">
+        <h1>project rekenmachine</h1>
+        <div class="text-container">
+            <p>Dit project betreft een zelfgemaakte rekenmachine. Met behulp van JavaScript en CSS heb ik deze eenvoudige maar functionele rekenmachine ontwikkeld. Het stelt gebruikers in staat om basisberekeningen uit te voeren, waaronder optellen, aftrekken, vermenigvuldigen en delen.  Als extra functionaliteit heb ik een geschiedenisfunctie toegevoegd waarmee gebruikers hun vorige berekeningen kunnen bekijken. </p>
+        </div>
+        <div class="grid-container">
+            <div class="calculator-scherm" id="calculator-scherm"></div>
+            <button class="grid-item" id="btn-geschiedenis">Geschiedenis</button>
+            <!-- nummer buttons -->
+            <button class="grid-item" id="btn-wis">C</button>
+            <button class="grid-item" id="btn-is">=</button>
+            <button class="grid-item" id="btn-0">0</button>
+            <button class="grid-item" id="btn-1">1</button>
+            <button class="grid-item" id="btn-2">2</button>
+            <button class="grid-item" id="btn-3">3</button>
+            <button class="grid-item" id="btn-4">4</button>
+            <button class="grid-item" id="btn-5">5</button>
+            <button class="grid-item" id="btn-6">6</button>
+            <button class="grid-item" id="btn-7">7</button>
+            <button class="grid-item" id="btn-8">8</button>
+            <button class="grid-item" id="btn-9">9</button>
+            <!-- operator buttons -->
+            <button class="grid-item" id="btn-plus">+</button>
+            <button class="grid-item" id="btn-keer">*</button>
+            <button class="grid-item" id="btn-haakrecht">(</button>
+            <button class="grid-item" id="btn-haaklinks">)</button>
+            <button class="grid-item" id="btn-punt">.</button>
+            <button class="grid-item" id="btn-min">-</button>
+            <button class="grid-item" id="btn-delen">/</button>
+            <button class="grid-item" id="btn-groterdan">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var calculatorScreen = document.getElementById("calculator-scherm");
+            var buttons = document.querySelectorAll(".grid-item");
+            var geschiedenis = []; //array voor geschiedenis
+
+            function calculate(expression) {
+                return Function('"use strict";return (' + expression + ')')();
+            }
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    try {
+                        //checken of de tekst van de geklikte knop een nummer
+                        if (!isNaN(button.textContent) && button.textContent !== null) {
+                            calculatorScreen.textContent += button.textContent;
+                        } else if (button.textContent === "=") {
+                            //kijken of de som wiskundig mogelijk is
+                            if (/[^0-9.+\-*/()%]/.test(calculatorScreen.textContent)) {
+                                throw new Error("ongeldige invoer");
+                            }
+
+                            // stopt de contennt op het scherm in een erray
+                            geschiedenis.push(calculatorScreen.textContent);
+
+                            calculatorScreen.textContent = calculate(calculatorScreen.textContent);
+                            //wanneer je op C klikt, wordt het scherm gewist
+                        } else if (button.textContent === "C") {
+                            calculatorScreen.textContent = "";
+                        } else if (button.textContent === "Geschiedenis") {
+                            // haalt de geschiedenis uit erray en laat dit zien
+                            alert("Geschiedenis:\n" + geschiedenis.join("\n"));
+                        } else {
+                            // Zorgt ervoor dat je . - + / * kan invoeren
+                            if (/[.\d+*/>()-]/.test(button.textContent)) {
+                                calculatorScreen.textContent += button.textContent;
+                            }
+                        }
+                    } catch (error) {
+                        alert("er is een fout opgetreden: " + error.message);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
