@@ -143,37 +143,39 @@ nav a:hover {
         <div class="text-container">
             <p>Dit project betreft een zelfgemaakte rekenmachine. Met behulp van JavaScript en CSS heb ik deze eenvoudige maar functionele rekenmachine ontwikkeld. Het stelt gebruikers in staat om basisberekeningen uit te voeren, waaronder optellen, aftrekken, vermenigvuldigen en delen.  Als extra functionaliteit heb ik een geschiedenisfunctie toegevoegd waarmee gebruikers hun vorige berekeningen kunnen bekijken. </p>
         </div>
+
+        <div id="calculator-container">
+        <h1 id="calculator-title"></h1>
+        <div id="calculator-screen"></div>
         <div class="grid-container">
-            <div class="calculator-scherm" id="calculator-scherm"></div>
-            <button class="grid-item" id="btn-geschiedenis">Geschiedenis</button>
-            <!-- nummer buttons -->
             <button class="grid-item" id="btn-wis">C</button>
-            <button class="grid-item" id="btn-is">=</button>
-            <button class="grid-item" id="btn-0">0</button>
             <button class="grid-item" id="btn-1">1</button>
             <button class="grid-item" id="btn-2">2</button>
             <button class="grid-item" id="btn-3">3</button>
+            <button class="grid-item" id="btn-plus">+</button>
             <button class="grid-item" id="btn-4">4</button>
             <button class="grid-item" id="btn-5">5</button>
             <button class="grid-item" id="btn-6">6</button>
+            <button class="grid-item" id="btn-min">-</button>
             <button class="grid-item" id="btn-7">7</button>
             <button class="grid-item" id="btn-8">8</button>
             <button class="grid-item" id="btn-9">9</button>
-            <!-- operator buttons -->
-            <button class="grid-item" id="btn-plus">+</button>
             <button class="grid-item" id="btn-keer">*</button>
-            <button class="grid-item" id="btn-haakrecht">(</button>
-            <button class="grid-item" id="btn-haaklinks">)</button>
+            <button class="grid-item" id="btn-0">0</button>
             <button class="grid-item" id="btn-punt">.</button>
-            <button class="grid-item" id="btn-min">-</button>
             <button class="grid-item" id="btn-delen">/</button>
+            <button class="grid-item" id="btn-haaklinks">(</button>
+            <button class="grid-item" id="btn-haakrecht">)</button>
             <button class="grid-item" id="btn-groterdan">&gt;</button>
+            <button class="grid-item" id="btn-is">=</button>
+            <button class="grid-item" id="btn-geschiedenis">Geschiedenis</button>
         </div>
+
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var calculatorScreen = document.getElementById("calculator-scherm");
+            var calculatorScreen = document.getElementById("calculator-screen");
             var buttons = document.querySelectorAll(".grid-item");
             var geschiedenis = []; //array voor geschiedenis
 
@@ -193,15 +195,15 @@ nav a:hover {
                                 throw new Error("ongeldige invoer");
                             }
 
-                            // stopt de contennt op het scherm in een erray
-                            geschiedenis.push(calculatorScreen.textContent);
+                            // stopt de content op het scherm in een array
+                            geschiedenis.push(calculatorScreen.textContent + " = " + calculate(calculatorScreen.textContent));
 
                             calculatorScreen.textContent = calculate(calculatorScreen.textContent);
                             //wanneer je op C klikt, wordt het scherm gewist
                         } else if (button.textContent === "C") {
                             calculatorScreen.textContent = "";
                         } else if (button.textContent === "Geschiedenis") {
-                            // haalt de geschiedenis uit erray en laat dit zien
+                            // haalt de geschiedenis uit array en laat dit zien
                             alert("Geschiedenis:\n" + geschiedenis.join("\n"));
                         } else {
                             // Zorgt ervoor dat je . - + / * kan invoeren
